@@ -1,0 +1,17 @@
+{
+  "name": "start-one-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JamesSingleton/one-app-tools",
+    "directory": "packages/start-one-app"
+  },
+  "keywords": [],
+  "author": "James Singleton <jamesrsingleton1@gmail.com> (https://github.com/JamesSingleton)",
+  "license": "MIT"
+}

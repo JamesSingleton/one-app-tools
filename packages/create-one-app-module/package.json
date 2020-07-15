@@ -1,0 +1,47 @@
+{
+  "name": "create-one-app-module",
+  "version": "1.0.0",
+  "description": "Create One App module with one command.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JamesSingleton/one-app-tools",
+    "directory": "packages/create-one-app-module"
+  },
+  "keywords": [
+    "One App",
+    "one-app",
+    "react",
+    "react.js"
+  ],
+  "author": "James Singleton <jamesrsingleton1@gmail.com> (https://github.com/JamesSingleton)",
+  "license": "MIT",
+  "bin": {
+    "create-one-app-module": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/async-retry": "^1.4.2",
+    "@types/node": "^14.0.23",
+    "@types/prompts": "^2.0.8",
+    "@types/rimraf": "^3.0.0",
+    "@types/tar": "^4.0.3",
+    "@types/validate-npm-package-name": "^3.0.0",
+    "async-retry": "^1.3.1",
+    "chalk": "^4.1.0",
+    "commander": "^5.1.0",
+    "cpy": "^8.1.0",
+    "cross-spawn": "^7.0.3",
+    "got": "^11.5.0",
+    "prompts": "^2.3.2",
+    "rimraf": "^3.0.2",
+    "tar": "^6.0.2",
+    "typescript": "^3.9.6",
+    "update-check": "^1.5.4",
+    "validate-npm-package-name": "^3.0.0"
+  }
+}

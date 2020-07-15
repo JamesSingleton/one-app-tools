@@ -1,0 +1,28 @@
+{
+  "name": "one-app-tools",
+  "private": "true",
+  "workspaces": [
+    "packages/*"
+  ],
+  "description": "Set of tools for working with One App.",
+  "scripts": {
+    "lerna": "lerna",
+    "lint-typescript": "lerna run typescript"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesSingleton/one-app-tools.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JamesSingleton/one-app-tools/issues"
+  },
+  "homepage": "https://github.com/JamesSingleton/one-app-tools#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "lerna": "^3.22.1",
+    "typescript": "^3.9.6"
+  }
+}
