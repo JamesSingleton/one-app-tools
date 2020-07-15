@@ -27,4 +27,4 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-This project is [ISC](https://github.com/JamesSingleton/one-app-tools/blob/master/LICENSE) licensed.
+This project is [MIT](https://github.com/JamesSingleton/one-app-tools/blob/master/LICENSE) licensed.
