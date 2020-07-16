@@ -1,8 +1,15 @@
 {
   "name": "start-one-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Start One App locally",
+  "bin": {
+    "start-one-app": "./dist/index.js",
+    "soa": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "scripts/preinstall.js"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,5 +20,8 @@
   },
   "keywords": [],
   "author": "James Singleton <jamesrsingleton1@gmail.com> (https://github.com/JamesSingleton)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.9.6"
+  }
 }
