@@ -7,7 +7,14 @@
   "description": "Set of tools for working with One App.",
   "scripts": {
     "lerna": "lerna",
-    "lint-typescript": "lerna run typescript"
+    "lint:typescript": "lerna run typescript",
+    "lint:eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
+    "lint": "run-p lint:typescript prettier-check lint:eslint",
+    "lint:fix": "yarn prettier-fix && eslint . --ext js,jsx,ts,tsx --fix --max-warnings=0",
+    "prettier-check": "prettier --check \"**/*.{js,mjs,cjs,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss,less,graphql,graphqls,gql}\"",
+    "prettier-fix": "prettier --write \"**/*.{js,mjs,cjs,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss,less,graphql,graphqls,gql}\"",
+    "types": "lerna run types --stream",
+    "typescript": "lerna run typescript"
   },
   "repository": {
     "type": "git",
@@ -21,8 +28,18 @@
   },
   "homepage": "https://github.com/JamesSingleton/one-app-tools#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.6.1",
+    "@typescript-eslint/parser": "^3.6.1",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.18.0",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
     "lerna": "^3.22.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
     "typescript": "^3.9.6"
   }
 }

@@ -1,5 +1,6 @@
-import chalk from 'chalk';
-import spawn from 'cross-spawn';
+/* eslint-disable import/no-extraneous-dependencies */
+import chalk from 'chalk'
+import spawn from 'cross-spawn'
 
 export function install(
   root: string,
@@ -7,45 +8,96 @@ export function install(
   { useYarn, isOnline }: { useYarn: boolean; isOnline: boolean }
 ): Promise<void> {
   return new Promise((resolve, reject) => {
-    let command: string;
-    let args: string[];
+    let command: string
+    let args: string[]
     if (useYarn) {
-      command = 'yarnpkg';
-      args = dependencies ? ['add', '--exact'] : ['install'];
+      command = 'yarnpkg'
+      args = dependencies ? ['add', '--exact'] : ['install']
       if (!isOnline) {
-        args.push('--offline');
+        args.push('--offline')
       }
       if (dependencies) {
-        args.push(...dependencies);
+        args.push(...dependencies)
       }
-      args.push('--cwd', root);
+      args.push('--cwd', root)
 
       if (!isOnline) {
-        console.log(chalk.yellow('You appear to be offline.'));
-        console.log(chalk.yellow('Falling back to the local Yarn cache.'));
-        console.log();
+        console.log(chalk.yellow('You appear to be offline.'))
+        console.log(chalk.yellow('Falling back to the local Yarn cache.'))
+        console.log()
       }
     } else {
-      command = 'npm';
+      command = 'npm'
       args = ([
         'install',
         dependencies && '--save',
         dependencies && '--save-exact',
         '--loglevel',
         'error',
-      ].filter(Boolean) as string[]).concat(dependencies || []);
+      ].filter(Boolean) as string[]).concat(dependencies || [])
     }
 
     const child = spawn(command, args, {
       stdio: 'inherit',
       env: { ...process.env, ADBLOCK: '1', DISABLE_OPENCOLLECTIVE: '1' },
-    });
-    child.on('close', (code) => {
+    })
+    child.on('close', (code: number) => {
       if (code !== 0) {
-        reject({ command: `${command} ${args.join(' ')}` });
-        return;
+        reject({ command: `${command} ${args.join(' ')}` })
+        return
       }
-      resolve();
-    });
-  });
+      resolve()
+    })
+  })
+}
+
+export function installDev(
+  root: string,
+  dependencies: string[] | null,
+  { useYarn, isOnline }: { useYarn: boolean; isOnline: boolean }
+): Promise<void> {
+  return new Promise((resolve, reject) => {
+    let command: string
+    let args: string[]
+    if (useYarn) {
+      command = 'yarnpkg'
+      args = dependencies
+        ? ['add', '--exact', '--dev']
+        : ['install', '--production=false']
+      if (!isOnline) {
+        args.push('--offline')
+      }
+      if (dependencies) {
+        args.push(...dependencies)
+      }
+      args.push('--cwd', root)
+
+      if (!isOnline) {
+        console.log(chalk.yellow('You appear to be offline.'))
+        console.log(chalk.yellow('Falling back to the local Yarn cache.'))
+        console.log()
+      }
+    } else {
+      command = 'npm'
+      args = ([
+        'install',
+        dependencies && '--save-dev',
+        dependencies && '--save-exact',
+        '--loglevel',
+        'error',
+      ].filter(Boolean) as string[]).concat(dependencies || [])
+    }
+
+    const child = spawn(command, args, {
+      stdio: 'inherit',
+      env: { ...process.env, ADBLOCK: '1', DISABLE_OPENCOLLECTIVE: '1' },
+    })
+    child.on('close', (code: number) => {
+      if (code !== 0) {
+        reject({ command: `${command} ${args.join(' ')}` })
+        return
+      }
+      resolve()
+    })
+  })
 }
