@@ -21,8 +21,8 @@
     "url": "git+https://github.com/JamesSingleton/one-app-tools.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "James Singleton <jamesrsingleton1@gmail.com> (https://github.com/JamesSingleton)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/JamesSingleton/one-app-tools/issues"
   },
