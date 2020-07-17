@@ -4,11 +4,13 @@ on:
   pull_request:
     types: [opened, synchronize]
 
-name: Deploy
+name: Build, test, and deploy
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      NEXT_TELEMETRY_DISABLED: 1
     steps:
       - uses: actions/checkout@v2
       - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
@@ -18,12 +20,22 @@ jobs:
         with:
           path: '.'
           key: ${{ github.sha }}
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+  lint:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/cache@v1
+        id: restore-build
+        with:
+          path: '.'
+          key: ${{ github.sha }}
+      - run: yarn lint
 
   publishRelease:
-    name: Publish Release
+    name: Potentially publish release
     runs-on: ubuntu-latest
-    needs: [build]
+    needs: [build, lint]
     env:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
@@ -32,6 +44,5 @@ jobs:
         with:
           path: '.'
           key: ${{ github.sha }}
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - run: ./publish-release.sh
