@@ -1,6 +1,6 @@
 {
   "name": "create-one-app-module",
-  "version": "1.0.0",
+  "version": "0.0.1-canary.0",
   "description": "Create One App module with one command.",
   "scripts": {
     "build": "ncc build ./index.ts -w -o dist/",
