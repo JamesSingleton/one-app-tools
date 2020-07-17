@@ -14,7 +14,10 @@
     "prettier:check": "prettier --check \"**/*.{js,mjs,cjs,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss,less,graphql,graphqls,gql}\"",
     "prettier:fix": "prettier --write \"**/*.{js,mjs,cjs,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss,less,graphql,graphqls,gql}\"",
     "types": "lerna run types --stream",
-    "typescript": "lerna run typescript"
+    "typescript": "lerna run typescript",
+    "prepublish": "lerna run prepublish",
+    "publish:canary": "lerna version prerelease --preid canary --force-publish && release --pre",
+    "publish:stable": "lerna version --force-publish"
   },
   "repository": {
     "type": "git",
