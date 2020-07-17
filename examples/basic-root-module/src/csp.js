@@ -1,5 +1,5 @@
-import contentSecurityPolicyBuilder from 'content-security-policy-builder'
-import ip from 'ip'
+import contentSecurityPolicyBuilder from 'content-security-policy-builder';
+import ip from 'ip';
 
 export default contentSecurityPolicyBuilder({
   directives: {
@@ -10,4 +10,4 @@ export default contentSecurityPolicyBuilder({
     styleSrc: ["'self'", "'unsafe-inline'"],
     connectSrc: ["'self'", `${ip.address()}:3001`, 'localhost:3001'],
   },
-})
+});
