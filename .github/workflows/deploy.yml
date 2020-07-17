@@ -1,0 +1,46 @@
+on:
+  push:
+    branches: [canary]
+  pull_request:
+    types: [opened, synchronize]
+
+name: Deploy
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+      - run: yarn install --frozen-lockfile --check-files
+      - uses: actions/cache@v2
+        id: cache-build
+        with:
+          path: '.'
+          key: ${{ github.sha }}
+
+  lint:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/cache@v1
+        id: restore-build
+        with:
+          path: '.'
+          key: ${{ github.sha }}
+      - run: yarn lint
+
+  publishRelease:
+    name: Publish Release
+    runs-on: ubuntu-latest
+    needs: [build, lint]
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    steps:
+      - uses: actions/cache@v2
+        id: restore-build
+        with:
+          path: '.'
+          key: ${{ github.sha }}
+
+      - run: ./publish-release.sh
