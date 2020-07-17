@@ -18,6 +18,7 @@ jobs:
         with:
           path: '.'
           key: ${{ github.sha }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
   publishRelease:
     name: Publish Release
@@ -31,5 +32,6 @@ jobs:
         with:
           path: '.'
           key: ${{ github.sha }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - run: ./publish-release.sh
