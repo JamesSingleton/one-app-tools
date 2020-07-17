@@ -1,7 +1,7 @@
 {
   "root": true,
   "parser": "babel-eslint",
-  "plugins": ["react", "react-hooks", "jest", "import"],
+  "plugins": ["react", "react-hooks", "import"],
   "env": {
     "browser": true,
     "commonjs": true,
@@ -15,22 +15,7 @@
       "jsx": true
     }
   },
-  "settings": {
-    "react": {
-      "version": "detect"
-    },
-    "import/internal-regex": "^next/"
-  },
   "overrides": [
-    {
-      "files": ["test/**/*.test.js"],
-      "extends": ["plugin:jest/recommended"],
-      "rules": {
-        "jest/expect-expect": "off",
-        "jest/no-disabled-tests": "off"
-      }
-    },
-    { "files": ["**/__tests__/**"], "env": { "jest": true } },
     {
       "files": ["**/*.ts", "**/*.tsx"],
       "parser": "@typescript-eslint/parser",
@@ -86,9 +71,8 @@
     },
     {
       "files": [
-        "test/**/*",
         "examples/**/*",
-        "packages/create-next-app/templates/**/*"
+        "packages/create-one-app-module/templates/**/*"
       ],
       "rules": { "react/react-in-jsx-scope": "off" }
     },
