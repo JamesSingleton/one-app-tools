@@ -5,7 +5,8 @@
   "scripts": {
     "prebuild": "npm run clean",
     "build": "bundle-module",
-    "clean": "rimraf build"
+    "clean": "rimraf build",
+    "start": "one-app-runner"
   },
   "dependencies": {
     "@americanexpress/one-app-ducks": "^4.1.1",
@@ -23,9 +24,19 @@
   },
   "devDependencies": {
     "@americanexpress/one-app-bundler": "^6.7.0",
+    "@americanexpress/one-app-runner": "^6.7.0",
     "babel-preset-amex": "^3.4.0",
     "eslint": "^6.8.0",
     "eslint-config-amex": "^12.2.0",
     "rimraf": "^3.0.2"
+  },
+  "one-amex": {
+    "runner": {
+      "modules": [
+        "."
+      ],
+      "rootModuleName": "basic-root-module",
+      "dockerImage": "oneamex/one-app-dev:latest"
+    }
   }
 }

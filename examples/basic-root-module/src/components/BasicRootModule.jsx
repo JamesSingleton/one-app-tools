@@ -20,7 +20,7 @@ BasicRootModule.propTypes = {
 
 if (!global.BROWSER) {
   // eslint-disable-next-line global-require
-  BasicRootModule.appConfig = require('../config').default;
+  BasicRootModule.appConfig = require('../appConfig').default;
 }
 
 export default BasicRootModule;

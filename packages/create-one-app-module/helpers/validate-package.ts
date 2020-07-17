@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import validateProjectName from 'validate-npm-package-name';
 
 export function validateNpmName(

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import got from 'got';
 import tar from 'tar';
 import { Stream } from 'stream';
@@ -62,7 +63,7 @@ export function hasRepository({
 
 export function hasExample(name: string): Promise<boolean> {
   return isUrlOk(
-    `https://api.github.com/repos/JamesSingleton/learn-one-app-examples/contents/examples/${encodeURIComponent(
+    `https://api.github.com/repos/JamesSingleton/one-app-tools/contents/examples/${encodeURIComponent(
       name
     )}/package.json`
   );
@@ -93,10 +94,10 @@ export function downloadAndExtractExample(
 
   return pipeline(
     got.stream(
-      'https://codeload.github.com/JamesSingleton/learn-one-app-examples/tar.gz/master'
+      'https://codeload.github.com/JamesSingleton/one-app-tools/tar.gz/master'
     ),
     tar.extract({ cwd: root, strip: 3 }, [
-      `learn-one-app-examples-master/examples/${name}`,
+      `one-app-tools-master/examples/${name}`,
     ])
   );
 }

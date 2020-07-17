@@ -1,3 +1,3 @@
-import ModuleContainer from './components/FrankLloydRoot';
+import ModuleContainer from './components/BasicRootModule';
 
 export default ModuleContainer;
