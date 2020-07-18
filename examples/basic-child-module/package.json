@@ -1,7 +1,7 @@
 {
-  "name": "basic-root-module",
+  "name": "basic-child-module",
   "version": "1.0.0",
-  "description": "Basic Root Module for One App",
+  "description": "Basic Child Module for One App",
   "scripts": {
     "prebuild": "npm run clean",
     "build": "bundle-module",
@@ -10,12 +10,6 @@
     "watch:build": "npm run build -- --watch"
   },
   "dependencies": {
-    "@americanexpress/one-app-ducks": "^4.1.1",
-    "content-security-policy-builder": "^2.1.0",
-    "holocron": "^1.1.0",
-    "holocron-module-route": "^1.1.0",
-    "ip": "^1.1.5",
-    "prop-types": "^15.7.2",
     "react": "^16.13.1"
   },
   "devDependencies": {
@@ -31,7 +25,6 @@
       "modules": [
         "."
       ],
-      "rootModuleName": "basic-root-module",
       "dockerImage": "oneamex/one-app-dev:latest"
     }
   }

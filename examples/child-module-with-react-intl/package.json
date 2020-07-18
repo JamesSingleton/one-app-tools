@@ -1,7 +1,7 @@
 {
-  "name": "basic-root-module",
+  "name": "child-module-with-react-intl",
   "version": "1.0.0",
-  "description": "Basic Root Module for One App",
+  "description": "Child Module with React Intl for One App",
   "scripts": {
     "prebuild": "npm run clean",
     "build": "bundle-module",
@@ -10,13 +10,8 @@
     "watch:build": "npm run build -- --watch"
   },
   "dependencies": {
-    "@americanexpress/one-app-ducks": "^4.1.1",
-    "content-security-policy-builder": "^2.1.0",
-    "holocron": "^1.1.0",
-    "holocron-module-route": "^1.1.0",
-    "ip": "^1.1.5",
-    "prop-types": "^15.7.2",
-    "react": "^16.13.1"
+    "react": "^16.13.1",
+    "react-intl": "^5.3.2"
   },
   "devDependencies": {
     "@americanexpress/one-app-bundler": "^6.7.0",
@@ -31,7 +26,6 @@
       "modules": [
         "."
       ],
-      "rootModuleName": "basic-root-module",
       "dockerImage": "oneamex/one-app-dev:latest"
     }
   }
