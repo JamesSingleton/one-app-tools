@@ -1,15 +1,9 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 import childRoutes from '../childRoutes';
 
 export const BasicRootModule = ({ children }) => {
-  return (
-    <Fragment>
-      <Helmet title="Basic Root Module" />
-      {children}
-    </Fragment>
-  );
+  return <Fragment>{children}</Fragment>;
 };
 
 BasicRootModule.childRoutes = childRoutes;
