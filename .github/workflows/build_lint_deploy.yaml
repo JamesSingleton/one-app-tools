@@ -27,12 +27,11 @@ jobs:
         run: yarn
         env:
           NODE_ENV: development
-
-  lint:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: install Dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
-      - run: yarn lint
+  # lint:
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+  #     - name: install Dependencies
+  #       if: steps.yarn-cache.outputs.cache-hit != 'true'
+  #       run: yarn
+  #     - run: yarn lint
