@@ -37,7 +37,7 @@
       "modules": [
         "."
       ],
-      "rootModuleName": "basic-root-module",
+      "rootModuleName": "root-module-with-react-intl",
       "dockerImage": "oneamex/one-app-dev:latest"
     }
   }
