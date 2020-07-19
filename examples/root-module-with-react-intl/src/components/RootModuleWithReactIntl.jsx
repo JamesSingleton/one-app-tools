@@ -7,6 +7,7 @@ import {
   IntlProvider,
 } from 'react-intl';
 import { loadLanguagePack } from '@americanexpress/one-app-ducks';
+import childRoutes from '../childRoutes';
 
 const { description } = defineMessages({
   description: {
@@ -41,5 +42,7 @@ RootModuleWithReactIntl.holocron = {
   name: 'root-module-with-react-intl',
   loadModuleData,
 };
+
+RootModuleWithReactIntl.childRoutes = childRoutes;
 
 export default RootModuleWithReactIntl;
