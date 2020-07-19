@@ -14,10 +14,12 @@
     "content-security-policy-builder": "^2.1.0",
     "holocron": "^1.1.0",
     "holocron-module-route": "^1.1.0",
+    "immutable": "^4.0.0-rc.12",
     "ip": "^1.1.5",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-intl": "^5.3.2"
+    "react-intl": "^5.3.2",
+    "react-redux": "^7.2.0"
   },
   "devDependencies": {
     "@americanexpress/one-app-bundler": "^6.7.0",
