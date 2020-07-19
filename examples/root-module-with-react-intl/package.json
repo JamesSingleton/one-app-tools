@@ -28,6 +28,11 @@
     "rimraf": "^3.0.2"
   },
   "one-amex": {
+    "bundler": {
+      "providedExternals": [
+        "react-intl"
+      ]
+    },
     "runner": {
       "modules": [
         "."
