@@ -1,3 +1,4 @@
 {
-  "greeting": "Bienvenidos desde Mexico!"
+  "greeting": "Bienvenidos desde Mexico!",
+  "description": "Un módulo de ejemplo que usa React Intl with One App."
 }
