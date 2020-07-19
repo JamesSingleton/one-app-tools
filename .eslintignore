@@ -1,3 +1,4 @@
 node_modules
 **/dist/**
 packages/create-one-app-module/templates/
+examples/
