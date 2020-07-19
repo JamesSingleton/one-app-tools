@@ -45,4 +45,9 @@ RootModuleWithReactIntl.holocron = {
 
 RootModuleWithReactIntl.childRoutes = childRoutes;
 
+if (!global.BROWSER) {
+  // eslint-disable-next-line global-require
+  RootModuleWithReactIntl.appConfig = require('../appConfig').default;
+}
+
 export default RootModuleWithReactIntl;
