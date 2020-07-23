@@ -9,6 +9,7 @@
   <a href="https://github.com/JamesSingleton/one-app-tools/blob/master/LICENSE" target="_blank">
     <img alt="License: ISC" src="https://img.shields.io/github/license/JamesSingleton/one-app-tools" />
   </a>
+  <a href="https://www.codefactor.io/repository/github/jamessingleton/one-app-tools"><img src="https://www.codefactor.io/repository/github/jamessingleton/one-app-tools/badge" alt="CodeFactor" /></a>
 </p>
 
 ## Author
