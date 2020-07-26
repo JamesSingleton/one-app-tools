@@ -20,7 +20,8 @@ then
   yarn run lerna publish from-git --npm-tag canary --yes
 
   # Make sure to exit script with code 1 if publish failed
-  if [[ ! $? -eq 0 ]];then
+  if ! $? -eq 0
+  then
     exit 1;
   fi
 else
@@ -32,7 +33,8 @@ if [[ ! $(git describe --exact-match 2> /dev/null || :) =~ -canary ]];then
   yarn run lerna publish from-git --yes
 
   # Make sure to exit script with code 1 if publish failed
-  if [[ ! $? -eq 0 ]];then
+  if ! $? -eq 0
+  then
     exit 1;
   fi
 else
