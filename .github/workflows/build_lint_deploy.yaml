@@ -36,6 +36,7 @@ jobs:
     needs: lint
     env:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      repo-token: "${{ secrets.GITHUB_TOKEN }}"
     steps:
       - uses: actions/cache@v2
         id: restore-build
