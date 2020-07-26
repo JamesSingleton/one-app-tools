@@ -2,7 +2,8 @@
 
 git describe --exact-match
 
-if [[ ! $? -eq 0 ]];then
+if ! $? -eq 0
+then
   echo "Nothing to publish, exiting.."
   exit 0;
 fi
