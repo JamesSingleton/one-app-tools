@@ -31,6 +31,7 @@ jobs:
       - uses: actions/cache@v2
         id: restore-build
         with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-
       - run: yarn lint
 
@@ -44,5 +45,6 @@ jobs:
       - uses: actions/cache@v2
         id: restore-build
         with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-
       - run: ./publish-release.sh
