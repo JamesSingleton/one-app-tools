@@ -45,4 +45,4 @@ jobs:
           key: ${{ github.sha }}
 
       - run: |
-        sh ./publish-release.sh
+          sh ./publish-release.sh
