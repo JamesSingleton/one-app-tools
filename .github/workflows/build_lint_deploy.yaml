@@ -44,4 +44,5 @@ jobs:
           path: ./*
           key: ${{ github.sha }}
 
-      - run: ./publish-release.sh
+      - run: |
+        sh ./publish-release.sh
