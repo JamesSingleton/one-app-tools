@@ -4,28 +4,45 @@ on:
   pull_request:
     types: [opened, synchronize]
 
-name: Build, lint, and deploy
+name: Build, test, and deploy
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+      - run: yarn install --frozen-lockfile --check-files
       - uses: actions/cache@v2
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        id: cache-build
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - name: Install Dependencies
-        run: yarn
-        env:
-          NODE_ENV: development
-      - name: lint
-        run: yarn lint
+          path: ./*
+          key: ${{ github.sha }}
+
+  lint:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/cache@v2
+        id: restore-build
+        with:
+          path: ./*
+          key: ${{ github.sha }}
+      - run: yarn lint
+
+  publishRelease:
+    name: Potentially publish release
+    runs-on: ubuntu-latest
+    needs: lint
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      repo-token: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/cache@v2
+        id: restore-build
+        with:
+          path: ./*
+          key: ${{ github.sha }}
+
+      - run: |
+          sh ./publish-release.sh
