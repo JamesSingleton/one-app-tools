@@ -1,0 +1,39 @@
+{
+  "name": "module-parcel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JamesSingleton/one-app-tools",
+    "directory": "packages/module-parcel"
+  },
+  "keywords": [
+    "One App",
+    "one-app",
+    "module bundler",
+    "module parcel",
+    "module-parcel"
+  ],
+  "author": "James Singleton <jamesrsingleton1@gmail.com> (https://github.com/JamesSingleton)",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/code-frame": "^7.10.4",
+    "chalk": "^4.1.0",
+    "is-wsl": "^2.2.0",
+    "loader-utils": "^2.0.0",
+    "mini-css-extract-plugin": "^0.10.0",
+    "ora": "^5.0.0",
+    "webpack": "^4.44.1",
+    "webpack-sources": "^1.4.3"
+  },
+  "devDependencies": {
+    "@types/lodash.curry": "^4.1.6",
+    "@types/webpack-sources": "^1.4.2",
+    "lodash.curry": "^4.1.1",
+    "typescript": "^3.9.7"
+  }
+}
