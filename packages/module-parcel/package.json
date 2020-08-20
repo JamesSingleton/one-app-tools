@@ -27,11 +27,14 @@
     "loader-utils": "^2.0.0",
     "mini-css-extract-plugin": "^0.10.0",
     "ora": "^5.0.0",
+    "strip-ansi": "^6.0.0",
+    "unistore": "^3.5.2",
     "webpack": "^4.44.1",
     "webpack-sources": "^1.4.3"
   },
   "devDependencies": {
     "@types/lodash.curry": "^4.1.6",
+    "@types/text-table": "^0.2.1",
     "@types/webpack-sources": "^1.4.2",
     "lodash.curry": "^4.1.1",
     "typescript": "^3.9.7"
