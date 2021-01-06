@@ -1,4 +1,4 @@
-This is a [One App](https://one-amex-docs.americanexpress.com/) module bootstrapped with [`create-one-app-module`](https://github.com/JamesSingleton/one-app-tools/tree/master/packages/create-one-app-module).
+This is a [One App](https://one-amex-docs.americanexpress.com/) module bootstrapped with [`create-one-app-module`](https://github.com/JamesSingleton/one-app-tools/tree/main/packages/create-one-app-module).
 
 ## Getting Started
 

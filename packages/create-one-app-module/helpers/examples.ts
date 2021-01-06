@@ -94,10 +94,10 @@ export function downloadAndExtractExample(
 
   return pipeline(
     got.stream(
-      'https://codeload.github.com/JamesSingleton/one-app-tools/tar.gz/master'
+      'https://codeload.github.com/JamesSingleton/one-app-tools/tar.gz/main'
     ),
     tar.extract({ cwd: root, strip: 3 }, [
-      `one-app-tools-master/examples/${name}`,
+      `one-app-tools-main/examples/${name}`,
     ])
   );
 }

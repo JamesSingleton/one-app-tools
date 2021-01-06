@@ -24,6 +24,8 @@ export function tryGitInit(root: string): boolean {
     execSync('git init', { stdio: 'ignore' });
     didInitSucceed = true;
 
+    execSync('git checkout -b main', { stdio: 'ignore' });
+
     execSync('git add -A', { stdio: 'ignore' });
     execSync(
       'git commit -m "feat(init): initial commit from Create One App Module"',

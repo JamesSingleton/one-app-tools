@@ -10,7 +10,7 @@
     "lint:typescript": "lerna run typescript",
     "lint:eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
     "lint": "run-p lint:typescript prettier:check lint:eslint",
-    "lint:fix": "yarn prettier-fix && eslint . --ext js,jsx,ts,tsx --fix --max-warnings=0",
+    "lint:fix": "yarn prettier:fix && eslint . --ext js,jsx,ts,tsx --fix --max-warnings=0",
     "prettier:check": "prettier --check \"**/*.{js,mjs,cjs,jsx,json,ts,tsx,md,mdx,yml,yaml}\"",
     "prettier:fix": "prettier --write \"**/*.{js,mjs,cjs,jsx,json,ts,tsx,md,mdx,yml,yaml}\"",
     "types": "lerna run types --stream",
