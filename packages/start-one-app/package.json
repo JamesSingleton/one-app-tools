@@ -1,6 +1,6 @@
 {
   "name": "start-one-app",
-  "version": "0.0.1-canary.1",
+  "version": "0.0.1-canary.0",
   "description": "Start One App locally",
   "bin": {
     "start-one-app": "./dist/index.js",
